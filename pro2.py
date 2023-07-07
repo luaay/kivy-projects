@@ -8,18 +8,26 @@ from kivy.uix.button import Button
 class LoginScreen(GridLayout):
     def __init__(self,**kwargs):
         super(LoginScreen,self).__init__( **kwargs)
-        self.cols = 2
-        self.add_widget(Label(text = "user name"))
+        self.cols = 1
+        self.inner_grid = GridLayout()
+        self.inner_grid.cols =2
+        self.add_widget(self.inner_grid)
+        self.inner_grid.add_widget(Label(text = "user name"))
         self.username = TextInput(multiline = False)
-        self.add_widget(self.username)
+        self.inner_grid.add_widget(self.username)
 
-        self.add_widget(Label(text = "password"))
+        self.inner_grid.add_widget(Label(text = "password"))
         self.password = TextInput(password = True, multiline = False)        
-        self.add_widget(self.password)
+        self.inner_grid.add_widget(self.password)
 
         self.submit = Button(text='submit')
+        self.submit.bind(on_press=self.callback)
         # self.submit.bind(on_press=callback)
         self.add_widget(self.submit)
+
+    def callback(self,instance):
+        print('okkkkkk')
+        
        
 
 
