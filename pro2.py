@@ -20,14 +20,17 @@ class LoginScreen(GridLayout):
         self.password = TextInput(password = True, multiline = False)        
         self.inner_grid.add_widget(self.password)
 
+        self.wlc = Label(text='welcome')
+        self.add_widget(self.wlc)
+
         self.submit = Button(text='submit')
         self.submit.bind(on_press=self.callback)
         # self.submit.bind(on_press=callback)
         self.add_widget(self.submit)
 
     def callback(self,instance):
-        print('okkkkkk')
-        
+        # self.wlc.text = self.username.text
+        self.wlc.text ="Welcome " + self.username.text
        
 
 
