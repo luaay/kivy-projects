@@ -1,0 +1,33 @@
+<LoginScreen>:
+    username: username
+    password:password
+    welcome:welcome
+    GridLayout:
+        cols:1
+       
+        size: root.width, root.height
+        GridLayout:
+            cols:2
+
+            Label:
+                text: "user name"
+
+            TextInput:
+                id: username
+                multiline:False 
+
+            Label:
+                text: 'password'
+            TextInput:
+                id: password
+                multiline: False
+                password:True
+            Label:
+                id: welcome
+                text:"Wolcome"
+        Button:
+            text: "submit"
+            on_press: root.btn()
+            
+        
+            
